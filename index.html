@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{{ title|striptags }}{% endblock title %}</title>
+  <link rel="shortcut icon" href="/favicon{% if preview_mode %}-preview{% endif %}.ico" />
+
+  {% block library_css %}
+  <link rel="stylesheet" type="text/css" href="css/base.css" />
+  <link rel="stylesheet" type="text/css" href="css/reveal.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/zenburn.css" />
+  <link rel="stylesheet" type="text/css" href="css/night.css" />
+  <style>
+    .reveal h1 {
+      text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2)
+    }
+    .reveal .slide-dark h1,
+    .reveal .slide-dark h2,
+    .reveal .slide-dark h3,
+    .reveal .slide-dark h4,
+    .reveal .slide-dark h5,
+    .reveal .slide-dark h6 {
+      color: #000;
+    }
+    .reveal .slide-dark h1,
+    .reveal .slide-dark h2 {
+      text-shadow: 0px 2px 10px rgba(255, 255, 255, 0.4)
+    }
+    .reveal .text-left h1,
+    .reveal .text-left h2,
+    .reveal .text-left h3,
+    .reveal .text-left h4,
+    .reveal .text-left h5,
+    .reveal .text-left h6,
+    .reveal .text-left p {
+      text-align: left;
+    }
+    .reveal .label-background h1,
+    .reveal .label-background h2,
+    .reveal .label-background h3,
+    .reveal .label-background h4,
+    .reveal .label-background h5,
+    .reveal .label-background h6 {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding-top: .25em;
+      padding-bottom: .25em;
+    }
+    .reveal .slide-dark.label-background h1,
+    .reveal .slide-dark.label-background h2,
+    .reveal .slide-dark.label-background h3,
+    .reveal .slide-dark.label-background h4,
+    .reveal .slide-dark.label-background h5,
+    .reveal .slide-dark.label-background h6 {
+      background-color: rgba(250, 244, 230, 0.9);
+      padding-top: .25em;
+      padding-bottom: .25em;
+    }
+    hr { display: block; height: 1px; border: 0; border-top: 1px solid #aaa; margin: .75em 0; padding: 0; }
+    .reveal pre {
+      margin: 0;
+      width: auto;
+      font-size: .68em;
+    }
+    p.file {
+      font-size: 0.9em;
+    }
+    p .file-name {
+      color: #5ad75a;
+    }
+    .reveal pre code { max-height: none; }
+  </style>
+  {% endblock library_css %}
+
+  {% block opengraph %}
+  <meta property="og:url" content="{{ ROOT_URL }}/{{ PATH }}" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{{ opengraph_image }}" />
+  <meta property="og:description" content="{{ opengraph_description }}" />
+  {% endblock opengraph %}
+
+  {% block shim %}
+  <!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  {% endblock %}
+
+  {% block meta %}
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% endblock meta %}
+
+</head>
+<body>
+
+{% block content %}
+<div class="reveal">
+  <div class="slides">
+    {% for slide in slides %}
+    <section id="{{ slide.id }}"{% if slide.class %} class="{{ slide.class }}"{% endif %}{% if slide.background_url %} data-background="images/{{ slide.background_url }}"{% endif %}{% if slide.background_color %} data-background-color="{{ slide.background_color }}"{% endif %}{% if slide.background_repeat %} data-background-repeat="{{ slide.background_repeat }}"{% endif %}{% if slide.background_size %} data-background-size="{{ slide.background_size }}"{% endif %}>
+      {{ read_file("slides/{0}.md".format(slide.id))|markdown }}
+    </section>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
+
+
+{% block library_scripts %}
+<script src="js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+<script>
+
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+
+    transition: 'linear',
+    theme: 'beige',
+
+    // Optional libraries used to extend on reveal.js
+    dependencies: [
+      { src: 'js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'js/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+    ]
+  });
+
+</script>
+
+{% endblock library_scripts %}
+
+</body>
+</html>
