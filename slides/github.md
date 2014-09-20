@@ -1,3 +1,4 @@
-## Use version control and work in public
+## Use version control
+## Work in public
 
 <img src="img/github.png"/>
