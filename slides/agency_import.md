@@ -1,4 +1,4 @@
-## Agency import: csvkit magic
+## Agency import: [csvkit](https://csvkit.readthedocs.org/) magic
 
 * Use csvkit's `in2csv` command to extract each sheet
 * Use csvkit's `csvstack` command to combine the sheets and add a grouping column
