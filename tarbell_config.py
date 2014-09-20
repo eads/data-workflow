@@ -60,4 +60,6 @@ def context_processor():
 @blueprint.app_template_filter()
 def markdown(value):
     """Run text through markdown process"""
-    return Markup(Markdown.markdown(value))
+    if value:
+        return Markup(Markdown.markdown(value))
+    return value

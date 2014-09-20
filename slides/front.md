@@ -1,8 +1,8 @@
-# Reusable Data Processing
+# Data Processing Workflows
 
 <hr/>
 
-Based on an [NPR Visuals blog post](http://blog.apps.npr.org/2014/09/02/reusable-data-processing.html)
+Chicago School of Data Days - Sept. 20, 2014
 
 Presented by David Eads [@eads](http://twitter.com/eads) / NPR Visuals [@nprviz](http://twitter.com/nprviz)
 
@@ -10,4 +10,7 @@ Presented by David Eads [@eads](http://twitter.com/eads) / NPR Visuals [@nprviz]
 
 Presentation source: [github.com/eads/data-workflow](http://github.com/eads/data-workflow)
 
-Made with [Tarbell](http://tarbell.tribapps.com)
+Based on an [NPR Visuals blog post](http://blog.apps.npr.org/2014/09/02/reusable-data-processing.html)
+
+<small>Made with [Tarbell](http://tarbell.tribapps.com)</small>
+
