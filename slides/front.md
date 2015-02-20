@@ -1,16 +1,16 @@
-# Data Processing Workflows
+# Cleaner Data
+
+## Do it once (and only once)
 
 <hr/>
-
-Chicago School of Data Days - Sept. 20, 2014
 
 David Eads [@eads](http://twitter.com/eads) | NPR Visuals [@nprviz](http://twitter.com/nprviz)
 
-Based on an [NPR Visuals blog post](http://blog.apps.npr.org/2014/09/02/reusable-data-processing.html)
+Based on an [NPR Visuals blog post](http://blog.apps.npr.org/2014/09/02/reusable-data-processing.html) and a [talk by Geoff Hing](http://ghing.github.io/cleaner-data/)
 
 <hr/>
 
-Slides: [http://recoveredfactory.net/data-workflow](http://recoveredfactory.net/data-workflow)
+Slides: [http://recoveredfactory.net/cleaner-data-dbootcamp](http://recoveredfactory.net/cleaner-data-dbootcamp)
 
-<small>Presentation source: [github.com/eads/data-workflow](http://github.com/eads/data-workflow) | Made with [Tarbell](http://tarbell.tribapps.com)</small>
+<small>Made with [Tarbell](http://tarbell.tribapps.com)</small>
 

@@ -20,8 +20,8 @@ EXCLUDES = ["*.md", "requirements.txt", "slides/*"]
 
 # S3 bucket configuration
 S3_BUCKETS = {
-    "production": "recoveredfactory.net/data-workflow",
-    "staging": "recoveredfactory.net/data-workflow-draft",
+    "production": "recoveredfactory.net/cleaner-data-dbootcamp",
+    "staging": "recoveredfactory.net/cleaner-data-dbootcamp",
 }
 
 # Default template variables

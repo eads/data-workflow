@@ -14,16 +14,8 @@
       text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2)
     }
     .reveal .slide-dark h1,
-    .reveal .slide-dark h2,
-    .reveal .slide-dark h3,
-    .reveal .slide-dark h4,
-    .reveal .slide-dark h5,
-    .reveal .slide-dark h6 {
-      color: #000;
-    }
-    .reveal .slide-dark h1,
     .reveal .slide-dark h2 {
-      text-shadow: 0px 2px 10px rgba(255, 255, 255, 0.4)
+      text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4)
     }
     .reveal .text-left h1,
     .reveal .text-left h2,
@@ -67,6 +59,10 @@
       color: #5ad75a;
     }
     .reveal pre code { max-height: none; }
+
+    .reveal .slide-background.present {
+      /*opacity: 0.5;*/
+    }
   </style>
   {% endblock library_css %}
 
@@ -96,7 +92,7 @@
 <div class="reveal">
   <div class="slides">
     {% for slide in slides %}
-    <section id="{{ slide.id }}"{% if slide.class %} class="{{ slide.class }}"{% endif %}{% if slide.background_url %} data-background="images/{{ slide.background_url }}"{% endif %}{% if slide.background_color %} data-background-color="{{ slide.background_color }}"{% endif %}{% if slide.background_repeat %} data-background-repeat="{{ slide.background_repeat }}"{% endif %}{% if slide.background_size %} data-background-size="{{ slide.background_size }}"{% endif %}>
+    <section id="{{ slide.id }}"{% if slide.class %} class="{{ slide.class }}"{% endif %}{% if slide.background_url %} data-background="img/{{ slide.background_url }}"{% endif %}{% if slide.background_color %} data-background-color="{{ slide.background_color }}"{% endif %}{% if slide.background_repeat %} data-background-repeat="{{ slide.background_repeat }}"{% endif %}{% if slide.background_size %} data-background-size="{{ slide.background_size }}"{% endif %}>
       {{ read_file("slides/{0}.md".format(slide.id))|markdown }}
     </section>
     {% endfor %}
