@@ -13,7 +13,7 @@ Tarbell project configuration
 CONTEXT_SOURCE_FILE = "_slides.xlsx"
 
 # Exclude these files from publication
-EXCLUDES = ["*.md", "requirements.txt", "slides/*"]
+EXCLUDES = ["*.md", "requirements.txt", "slides/*", ".git/*"]
 
 # Create JSON data at ./data.json, disabled by default
 # CREATE_JSON = True
